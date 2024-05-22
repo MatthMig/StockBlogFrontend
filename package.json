@@ -5,9 +5,9 @@
   "type": "commonjs",
   "scripts": {
     "dev": "vite",
-    "build": "NODE_OPTIONS=--max_old_space_size=8192 vite build",
+    "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview --port $PORT",
+    "preview": "vite preview",
     "start": "npm run build && npm run preview"
   },
   "dependencies": {
