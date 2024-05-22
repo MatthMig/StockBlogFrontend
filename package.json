@@ -5,9 +5,9 @@
   "type": "commonjs",
   "scripts": {
     "dev": "cross-env VITE_APP_BACKEND_URL=http://localhost:3000/ vite",
-    "build": "vite build",
+    "build": "node --experimental-specifier-resolution=node --experimental-repl-await ./build.js",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
+    "preview": "node --experimental-specifier-resolution=node --experimental-repl-await ./preview.js",
     "start": "cross-env NODE_OPTIONS=--max-old-space-size=4096 npm run build && npm run preview"
   },
   "dependencies": {
