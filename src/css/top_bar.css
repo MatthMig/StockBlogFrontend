@@ -1,0 +1,105 @@
+.text-primary {
+  color: var(--primary-color);
+}
+
+.custom-navbar {
+  background: #ffffff;
+  border-top: 5px solid var(--primary-color);
+  border-bottom: 0;
+  -webkit-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+  padding: 12px 0;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.custom-navbar .navbar-nav.navbar-right {
+    margin-left: auto;
+  }
+
+.custom-navbar .navbar-brand {
+  color: #454545;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 40px;
+  padding-left: 20px;
+}
+
+.custom-navbar .navbar-nav.navbar-right li a {
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+.custom-navbar .navbar-nav.navbar-right li a .fa {
+  background: var(--primary-color);
+  border-radius: 100%;
+  color: #ffffff;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.custom-navbar .nav li a {
+  line-height: 40px;
+  color: #575757;
+  padding-right: 22px !important;
+  padding-left: 22px !important;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.custom-navbar .navbar-nav > li > a:hover,
+.custom-navbar .navbar-nav > li > a:focus {
+  background-color: transparent;
+}
+
+.custom-navbar .nav li a:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.custom-navbar .nav li:has(> .nav-link.active) > a {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.custom-navbar .navbar-toggle {
+  border: none;
+  padding-top: 10px;
+}
+
+.custom-navbar .navbar-toggle {
+  background-color: transparent;
+}
+
+.custom-navbar .navbar-toggle .icon-bar {
+  background: #252525;
+  border-color: transparent;
+}
+
+.basic-navbar-nav {
+    margin-left: auto; 
+    margin-right: 0;
+}
+
+.log-buttons {
+  margin-right: 10px;
+  margin-left: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.gear {
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.admin-indicator {
+  color: red;
+  font-weight: bold;
+  margin-right: 10px;
+}

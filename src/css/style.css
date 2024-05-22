@@ -1,0 +1,83 @@
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+.app {
+  --primary-color: purple;
+  overflow-x: hidden;
+  padding-top: 56px;
+  min-height: 100vh;
+}
+
+.right-align {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+.center-align {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.chat-box {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.chat-box .send-button {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.chat-box .bar {
+  margin-top: 5px;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.chat-box .input-field {
+  padding-left: 0;
+}
+
+canvas {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.stock-price {
+  height: 100%;
+}
+
+.chat-messages {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  height: 300px;
+  overflow-y: auto;
+}
+
+.btn-xs {
+  padding: 0.1rem 0.45rem;
+  font-size: 0.7rem;
+  line-height: 0.5;
+  border-radius: 0.2rem;
+}
+
+.link {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}
+
+.spinner-chat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.loading {
+  cursor: progress;
+}

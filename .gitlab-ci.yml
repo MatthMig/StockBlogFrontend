@@ -1,0 +1,10 @@
+stages:
+  - lint
+
+frontend_lint_job:
+  stage: lint
+  image: node:latest
+  script:
+    - cd frontend
+    - npm install
+    - npm run lint
