@@ -1,9 +1,9 @@
 import { getTokens } from './auth';
 
-const BASE_URL = 'http://localhost:3000/api';
+const BASE_BACKEND_URL = `${import.meta.env.VITE_APP_BACKEND_URL}api`;
 
 export async function fetchMessages(asset) {
-    const response = await fetch(`${BASE_URL}/messages/${asset.symbol}`);
+    const response = await fetch(`${BASE_BACKEND_URL}/messages/${asset.symbol}`);
 
     if (!response.ok) {
         throw new Error("Network response was not ok");
@@ -17,7 +17,7 @@ export async function postMessage(asset, message) {
     // Get the token from local storage
     const token = getTokens().token;
 
-    const response = await fetch(`${BASE_URL}/messages/${asset.symbol}`, {
+    const response = await fetch(`${BASE_BACKEND_URL}/messages/${asset.symbol}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -36,7 +36,7 @@ export async function postMessage(asset, message) {
 export async function deleteMessage(id) {
     const token = getTokens().token;
 
-    const response = await fetch(`${BASE_URL}/messages/${id}`, {
+    const response = await fetch(`${BASE_BACKEND_URL}/messages/${id}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ export async function deleteMessage(id) {
 export async function deleteUser(userMail) {
     const token = getTokens().token;
 
-    const response = await fetch(`${BASE_URL}/users/${userMail}`, {
+    const response = await fetch(`${BASE_BACKEND_URL}/users/${userMail}`, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
@@ -69,7 +69,7 @@ export async function deleteUser(userMail) {
 
 export async function fetchUserDetails(userMail) {
     const encodedUserMail = encodeURIComponent(userMail);
-    const response = await fetch(`${BASE_URL}/users/${encodedUserMail}`, {
+    const response = await fetch(`${BASE_BACKEND_URL}/users/${encodedUserMail}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -89,7 +89,7 @@ export async function fetchUserDetails(userMail) {
 export async function fetchSymbols() {
     let response;
     try {
-        response = await fetch(`${BASE_URL}/alpaca/symbols`);
+        response = await fetch(`${BASE_BACKEND_URL}/alpaca/symbols`);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -108,7 +108,7 @@ export async function fetchBars(asset) {
 
     const timeframe = '1D';
 
-    const response = await fetch(`${BASE_URL}/alpaca/bars/${asset.class}/${asset.symbol}/${start}/${end}/${timeframe}`);
+    const response = await fetch(`${BASE_BACKEND_URL}/alpaca/bars/${asset.class}/${asset.symbol}/${start}/${end}/${timeframe}`);
     let data = await response.json();
     if (typeof data.bars === 'object' && data.bars[decodeURIComponent(asset.symbol)]) {
         data.bars = data.bars[decodeURIComponent(asset.symbol)];
@@ -117,7 +117,7 @@ export async function fetchBars(asset) {
 }
 
 export async function postAuthLogin(email, password) {
-    const response = await fetch(`${BASE_URL}/auth/login`, {
+    const response = await fetch(`${BASE_BACKEND_URL}/auth/login`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -128,7 +128,7 @@ export async function postAuthLogin(email, password) {
 }
 
 export async function postAuthSignup(email, password, name) {
-    const response = await fetch(`${BASE_URL}/auth/signup`, {
+    const response = await fetch(`${BASE_BACKEND_URL}/auth/signup`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -140,7 +140,7 @@ export async function postAuthSignup(email, password, name) {
 
 export async function updateUser(email, name, password) {
     const token = getTokens().token;
-    const response = await fetch(`${BASE_URL}/users/${encodeURIComponent(email)}`, {
+    const response = await fetch(`${BASE_BACKEND_URL}/users/${encodeURIComponent(email)}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -161,7 +161,7 @@ export async function fetchUserMessages(userEmail) {
     const token = getTokens().token;
     const encodedUserEmail = encodeURIComponent(userEmail);
 
-    const response = await fetch(`${BASE_URL}/users/${encodedUserEmail}/messages`, {
+    const response = await fetch(`${BASE_BACKEND_URL}/users/${encodedUserEmail}/messages`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
