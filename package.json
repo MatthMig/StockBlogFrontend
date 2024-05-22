@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "commonjs",
   "scripts": {
-    "dev": "vite",
+    "dev": "cross-env VITE_APP_BACKEND_URL=http://localhost:3000/ vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
@@ -36,6 +36,7 @@
     "@eslint/js": "^9.3.0",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.4.5",
     "eslint": "^8.0.0",
     "eslint-plugin-react": "^7.34.1",
