@@ -33,14 +33,15 @@ export default function Chat({ asset }) {
 
     useEffect(() => {
         if (asset) {
-            /*
-            // Start polling for new messages every seconds
-            const intervalId = setInterval(updateMessages, 1000);
-            // Clean up the interval on component unmount
-            return () => clearInterval(intervalId);
-            */           
             setIsLoading(true);
             updateMessages();
+            // Start polling for new messages every second
+            const intervalId = setInterval(updateMessages, 1000);
+            // Clean up the interval on component unmount
+            return () => {
+                clearInterval(intervalId);
+                setIsLoading(false);
+            };
         }
         setIsLoading(false);
     }, [asset, updateMessages]);
